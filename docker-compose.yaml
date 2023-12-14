@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  ssprContainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: meowweasy/demo
+    container_name: sspr-container
+    ports:
+      - "8066:8066"
+    networks:
+      backend:
+        aliases:
+          - "ssprContainer"
+
+networks:
+  backend:
+    driver: bridge
