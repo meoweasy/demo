@@ -26,8 +26,8 @@ pipeline {
 
         stage("Push Image To Docker Hub") {
             steps {
-                withCredentials([string(credentialsId: 'www392002*', variable: 'www392002*')]) {
-                    bat "docker login --username meowweasy --password ${www392002*}"
+                withCredentials() {
+                    bat "docker login --username meowweasy --password www392002*"
                     bat 'docker push mlnrzm/sspr4:latest'
                 }
             }
